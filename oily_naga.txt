@@ -1,0 +1,206 @@
+Module {
+    types: {
+        [1]: Type {
+            name: None,
+            inner: Scalar {
+                kind: Uint,
+                width: 4,
+            },
+        },
+        [2]: Type {
+            name: Some(
+                "_naga_oil_mod_NVXWI_memberV",
+            ),
+            inner: Struct {
+                members: [
+                    StructMember {
+                        name: Some(
+                            "instance_index",
+                        ),
+                        ty: [1],
+                        binding: Some(
+                            BuiltIn(
+                                InstanceIndex,
+                            ),
+                        ),
+                        offset: 0,
+                    },
+                ],
+                span: 4,
+            },
+        },
+        [3]: Type {
+            name: None,
+            inner: Vector {
+                size: Quad,
+                kind: Float,
+                width: 4,
+            },
+        },
+    },
+    special_types: SpecialTypes {
+        ray_desc: None,
+        ray_intersection: None,
+    },
+    constants: {},
+    global_variables: {},
+    functions: {},
+    entry_points: [
+        EntryPoint {
+            name: "vertex",
+            stage: Vertex,
+            early_depth_test: None,
+            workgroup_size: [
+                0,
+                0,
+                0,
+            ],
+            function: Function {
+                name: Some(
+                    "vertex",
+                ),
+                arguments: [
+                    FunctionArgument {
+                        name: Some(
+                            "v",
+                        ),
+                        ty: [2],
+                        binding: None,
+                    },
+                ],
+                result: Some(
+                    FunctionResult {
+                        ty: [1],
+                        binding: Some(
+                            Location {
+                                location: 0,
+                                interpolation: Some(
+                                    Flat,
+                                ),
+                                sampling: None,
+                            },
+                        ),
+                    },
+                ),
+                local_variables: {},
+                expressions: {
+                    [1]: FunctionArgument(
+                        0,
+                    ),
+                    [2]: AccessIndex {
+                        base: [1],
+                        index: 0,
+                    },
+                },
+                named_expressions: {
+                    [1]: "v",
+                },
+                body: Block {
+                    body: [
+                        Emit(
+                            [2..2],
+                        ),
+                        Return {
+                            value: Some(
+                                [2],
+                            ),
+                        },
+                    ],
+                    span_info: [
+                        Span {
+                            start: 188,
+                            end: 204,
+                        },
+                        Span {
+                            start: 181,
+                            end: 205,
+                        },
+                    ],
+                },
+            },
+        },
+        EntryPoint {
+            name: "fragment",
+            stage: Fragment,
+            early_depth_test: None,
+            workgroup_size: [
+                0,
+                0,
+                0,
+            ],
+            function: Function {
+                name: Some(
+                    "fragment",
+                ),
+                arguments: [
+                    FunctionArgument {
+                        name: Some(
+                            "index",
+                        ),
+                        ty: [1],
+                        binding: Some(
+                            Location {
+                                location: 0,
+                                interpolation: Some(
+                                    Flat,
+                                ),
+                                sampling: None,
+                            },
+                        ),
+                    },
+                ],
+                result: Some(
+                    FunctionResult {
+                        ty: [3],
+                        binding: Some(
+                            Location {
+                                location: 0,
+                                interpolation: Some(
+                                    Perspective,
+                                ),
+                                sampling: Some(
+                                    Center,
+                                ),
+                            },
+                        ),
+                    },
+                ),
+                local_variables: {},
+                expressions: {
+                    [1]: FunctionArgument(
+                        0,
+                    ),
+                    [2]: Splat {
+                        size: Quad,
+                        value: [1],
+                    },
+                },
+                named_expressions: {
+                    [1]: "index",
+                },
+                body: Block {
+                    body: [
+                        Emit(
+                            [2..2],
+                        ),
+                        Return {
+                            value: Some(
+                                [2],
+                            ),
+                        },
+                    ],
+                    span_info: [
+                        Span {
+                            start: 295,
+                            end: 311,
+                        },
+                        Span {
+                            start: 288,
+                            end: 312,
+                        },
+                    ],
+                },
+            },
+        },
+    ],
+}
